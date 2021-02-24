@@ -1,0 +1,209 @@
+.post-type-shop_order td.order_items {
+    width: 10ch;
+}
+
+.post-type-shop_order td.order_items .wc-show-order-items {
+    padding: 3px 8px;
+    cursor: pointer !important;
+    color: #555d66;
+    border: 1px solid #999;
+    border-radius: 3px;
+    background: #edeff0;
+    line-height: 1;
+}
+
+.post-type-shop_order td.order_items .wc-show-order-items.no-link {
+    cursor: pointer !important;
+}
+
+.post-type-shop_order td.order_items .wc-show-order-items.disabled {
+    pointer-events: none;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1001;
+    top: 166px;
+    right: 0;
+    width: 510px;
+    height: calc(100vh - 166px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: -webkit-transform box-shadow;
+    transition-property: -webkit-transform box-shadow;
+    -o-transition-property: transform box-shadow;
+    transition-property: transform box-shadow;
+    transition-property: transform box-shadow, -webkit-transform box-shadow;
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    background: #f0f0f0;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+@media (max-width: 782px) {
+    .post-type-shop_order .wc-order-items-panel-wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 783px) {
+    .post-type-shop_order .wc-order-items-panel-wrapper {
+        top: 92px;
+        height: calc(100vh - 92px);
+    }
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper.is-open {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-box-shadow: 0 12px 12px 0 rgba(85, 93, 102, 0.3);
+    box-shadow: 0 12px 12px 0 rgba(85, 93, 102, 0.3);
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-panel-header {
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 16px;
+    background: #e0e0e0;
+}
+
+@media (min-width: 783px) {
+    .post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-panel-header {
+        padding: 16px 24px;
+    }
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-panel-header h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card {
+    position: relative;
+    padding: 24px;
+    padding: var(--main-gap);
+    color: #757575;
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+    font-size: 13px;
+    font-size: .8125rem;
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    grid-template-areas: "icon header" "icon body";
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card.empty-card .placeholder {
+    height: 16px;
+    display: inline-block;
+    -webkit-animation: loading-fade 1.6s ease-in-out infinite;
+    animation: loading-fade 1.6s ease-in-out infinite;
+    color: transparent;
+    background-color: #e2e4e7;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card.empty-card .wc-order-items-card-title {
+    width: 80%;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card.empty-card .wc-order-items-card-body .placeholder {
+    width: 60px;
+    margin-bottom: 0;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-icon {
+    grid-area: icon;
+    fill: #e0e0e0;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-icon .wc-product-image {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-icon .wc-product-image img {
+    max-width: 100%;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-icon .placeholder {
+    width: 48px;
+    height: 48px;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 783px) {
+    .post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-header {
+        display: -ms-grid;
+        display: grid;
+        grid-area: header;
+        grid-template: 'title date' 'subtitle date'/1fr auto;
+    }
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-header .wc-order-items-card-title {
+    margin: 0;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+@media (min-width: 783px) {
+    .post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-header .wc-order-items-card-title {
+        grid-area: title;
+    }
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-header .wc-order-items-card-title a {
+    text-decoration: none;
+    color: #d94f4f;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-body {
+    grid-area: body;
+}
+
+.post-type-shop_order .wc-order-items-panel-wrapper .wc-order-items-card .wc-order-items-card-body .wc-order-items-card-qty {
+    padding: 3px 8px;
+    color: #757575;
+    border-radius: 3px;
+    background: #f0f0f0;
+}
