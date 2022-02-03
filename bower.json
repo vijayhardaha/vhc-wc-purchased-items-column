@@ -1,12 +1,12 @@
 {
-  "name": "wordpress-plugin-boilerplate-gulp",
-  "description": "A Wordpress starter pack with pre-configured Gulp to setup custom Wordpress Plugin Boilerplate in a minute.",
+  "name": "vhc-wc-purchased-items-column",
+  "description": "Generates a custom product sales report during a specified time period with filtering option.",
   "main": "gulpfile.js",
   "authors": [
-    "vijayhardaha <vijayhardaha@gmail.com>"
+    "Vijay Hardaha <https://twitter.com/vijayhardaha>"
   ],
-  "license": "ISC",
-  "homepage": "https://github.com/vijayhardaha/wordpress-plugin-boilerplate-gulp",
+  "license": "MIT",
+  "homepage": "https://github.com/vijayhardaha/vhc-wc-purchased-items-column",
   "ignore": [
     "**/.*",
     "node_modules",
