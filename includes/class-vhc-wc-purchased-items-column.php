@@ -342,7 +342,7 @@ final class VHC_WC_Purchased_Items_Column {
 					)
 				);
 				?>
-					</p>
+				</p>
 			</div>
 			<?php
 		}

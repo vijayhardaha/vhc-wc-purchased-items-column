@@ -54,7 +54,7 @@ msgstr ""
 msgid "Sorry, we didn't found any order with Order ID #%s."
 msgstr ""
 
-#: ../includes/class-vhc-wc-purchased-items-column-admin.php:189
+#: ../includes/class-vhc-wc-purchased-items-column-admin.php:187
 msgid "Qty"
 msgstr ""
 

@@ -29,14 +29,14 @@
     pointer-events: none;
 }
 
-.post-type-shop_order .vhc-order-items-panel {
+.post-type-shop_order .vhc-items-panel {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: fixed;
     z-index: 1001;
     top: 0;
     right: 0;
-    width: 510px;
+    width: 430px;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -56,19 +56,19 @@
     transition-timing-function: ease-in-out;
 }
 
-.post-type-shop_order .vhc-order-items-panel * {
+.post-type-shop_order .vhc-items-panel * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.post-type-shop_order .vhc-order-items-panel.is-open {
+.post-type-shop_order .vhc-items-panel.is-open {
     -webkit-transform: none;
     transform: none;
-    -webkit-box-shadow: 0 8px 16px 0 rgba(85, 93, 102, 0.3);
-    box-shadow: 0 8px 16px 0 rgba(85, 93, 102, 0.3);
+    -webkit-box-shadow: 0 12px 12px 0 rgba(85, 93, 102, 0.3);
+    box-shadow: 0 12px 12px 0 rgba(85, 93, 102, 0.3);
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-panel-header {
+.post-type-shop_order .vhc-items-panel .panel-header {
     height: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -79,33 +79,38 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 16px;
+    padding: 16px 24px;
     background: #e0e0e0;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-panel-header h3 {
+.post-type-shop_order .vhc-items-panel .panel-header h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    font-weight: 400;
+    color: #1e1e1e;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 28px;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card {
+.post-type-shop_order .vhc-items-panel .items-card {
     position: relative;
     display: grid;
-    padding: 24px;
-    padding: var(--main-gap);
+    padding: 16px 24px;
     color: #757575;
-    border-bottom: 1px solid #e0e0e0;
-    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    background: #ffffff;
     font-size: 13px;
-    font-size: 0.8125rem;
     grid-template-columns: 84px 1fr;
     grid-template-areas: "icon header" "icon body";
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card.empty-card .placeholder {
+.post-type-shop_order .vhc-items-panel .items-card.empty-card .placeholder {
     height: 16px;
     display: inline-block;
     -webkit-animation: loading-fade 1.6s ease-in-out infinite;
@@ -114,85 +119,64 @@
     background-color: #e2e4e7;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card.empty-card .vhc-order-items-card-title {
+.post-type-shop_order .vhc-items-panel .items-card.empty-card .card-title {
     width: 80%;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card.empty-card .vhc-order-items-card-body .placeholder {
+.post-type-shop_order .vhc-items-panel .items-card.empty-card .card-body .placeholder {
     width: 60px;
     margin-bottom: 0;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-icon {
+.post-type-shop_order .vhc-items-panel .items-card .card-icon {
     grid-area: icon;
     fill: #e0e0e0;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-icon .vhc-product-image {
+.post-type-shop_order .vhc-items-panel .items-card .card-icon .image {
     position: relative;
     width: 60px;
     height: 60px;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-icon .vhc-product-image img {
+.post-type-shop_order .vhc-items-panel .items-card .card-icon .image img {
     max-width: 100%;
     vertical-align: middle;
     border-radius: 50%;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-icon .placeholder {
+.post-type-shop_order .vhc-items-panel .items-card .card-icon .placeholder {
     width: 48px;
     height: 48px;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 16px;
+.post-type-shop_order .vhc-items-panel .items-card .card-header {
+    display: grid;
+    margin-bottom: 6px;
+    grid-area: header;
+    grid-template: "title date" "subtitle date"/1fr auto;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-header .vhc-order-items-card-title {
+.post-type-shop_order .vhc-items-panel .items-card .card-header .card-title {
     margin: 0;
     font-size: 15px;
-    font-size: 0.9375rem;
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
     order: 2;
+    grid-area: title;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-header .vhc-order-items-card-title a {
+.post-type-shop_order .vhc-items-panel .items-card .card-header .card-title a {
     color: var(--wp-admin-theme-color);
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-body {
+.post-type-shop_order .vhc-items-panel .items-card .card-body {
     grid-area: body;
 }
 
-.post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-body .vhc-order-items-card-qty {
+.post-type-shop_order .vhc-items-panel .items-card .card-body .card-qty {
     padding: 3px 8px;
     color: #757575;
     border-radius: 3px;
     background: #f0f0f0;
-}
-
-@media (min-width: 783px) {
-    .post-type-shop_order .vhc-order-items-panel .vhc-order-items-panel-header {
-        padding: 16px 24px;
-    }
-
-    .post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-header {
-        display: -ms-grid;
-        display: grid;
-        grid-area: header;
-        grid-template: "title date" "subtitle date"/1fr auto;
-    }
-
-    .post-type-shop_order .vhc-order-items-panel .vhc-order-items-card .vhc-order-items-card-header .vhc-order-items-card-title {
-        grid-area: title;
-    }
 }

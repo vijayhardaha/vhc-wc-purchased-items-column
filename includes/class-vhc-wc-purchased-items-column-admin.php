@@ -174,19 +174,17 @@ class VHC_WC_Purchased_Items_Column_Admin {
 					$product          = apply_filters( 'woocommerce_order_item_product', $item->get_product(), $item );
 					$product_edit_url = $product ? esc_url( get_edit_post_link( $product->get_id() ) ) : 'javascript:void(0)';
 					?>
-					<section class="vhc-order-items-card">
+					<section class="items-card">
 						<?php if ( $product ) : ?>
-						<span class="vhc-order-items-card-icon" aria-hidden="true">
-							<div class="vhc-product-image-overlay">
-								<div class="vhc-product-image"><?php echo $product->get_image( array( 60, 60 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-							</div>
+						<span class="card-icon" aria-hidden="true">
+							<span class="image"><?php echo $product->get_image( array( 60, 60 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 						</span>
 						<?php endif; ?>
-						<header class="vhc-order-items-card-header">
-							<h4 class="vhc-order-items-card-title"><a href="<?php echo esc_attr( $product_edit_url ); ?>" target="_blank"><?php echo esc_html( apply_filters( 'woocommerce_order_item_name', $item['name'], $item, false ) ); ?></a></h4>
+						<header class="card-header">
+							<h4 class="card-title"><a href="<?php echo esc_attr( $product_edit_url ); ?>" target="_blank"><?php echo esc_html( apply_filters( 'woocommerce_order_item_name', $item['name'], $item, false ) ); ?></a></h4>
 						</header>
-						<div class="vhc-order-items-card-body">
-							<span class="vhc-order-items-card-qty"><?php esc_html_e( 'Qty', 'vhc-wc-purchased-items-column' ); ?>: <?php echo absint( $item['qty'] ); ?></span>
+						<div class="card-body">
+							<span class="card-qty"><?php esc_html_e( 'Qty', 'vhc-wc-purchased-items-column' ); ?>: <?php echo absint( $item['qty'] ); ?></span>
 						</div>
 					</section>
 					<?php
@@ -195,11 +193,7 @@ class VHC_WC_Purchased_Items_Column_Admin {
 			$content = ob_get_clean();
 
 			// If schedule get success then send the success response.
-			wp_send_json_success(
-				array(
-					'items' => $content,
-				)
-			);
+			wp_send_json_success( array( 'items' => $content ) );
 		} catch ( Exception $e ) {
 			if ( $e->getMessage() ) {
 				wp_send_json_error( array( 'error' => $e->getMessage() ) );

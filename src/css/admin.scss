@@ -1,4 +1,6 @@
-$wc-color: var(--wp-admin-theme-color);
+$primary: var(--wp-admin-theme-color);
+$white: #ffffff;
+$black: #000000;
 
 .post-type-shop_order {
   td.vhc_order_items {
@@ -7,7 +9,7 @@ $wc-color: var(--wp-admin-theme-color);
     .vhc-show-order-items {
       padding: 3px 8px;
       cursor: pointer !important;
-      color: $wc-color;
+      color: $primary;
       border: 1px solid #ccc;
       border-radius: 3px;
       outline: 0 !important;
@@ -16,7 +18,7 @@ $wc-color: var(--wp-admin-theme-color);
       line-height: 1;
 
       &:hover {
-        color: $wc-color;
+        color: $primary;
         border: 1px solid #b5b5b5;
         background: #f0f0f0;
       }
@@ -31,17 +33,17 @@ $wc-color: var(--wp-admin-theme-color);
     }
   }
 
-  .vhc-order-items-panel {
+  .vhc-items-panel {
     box-sizing: border-box;
     position: fixed;
     z-index: 1001;
     top: 0;
     right: 0;
-    width: 510px;
+    width: 430px;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     transition-property: transform box-shadow;
     transform: translateX(100%);
     background: #f0f0f0;
@@ -53,44 +55,39 @@ $wc-color: var(--wp-admin-theme-color);
 
     &.is-open {
       transform: none;
-      box-shadow: 0 8px 16px 0 rgba(85, 93, 102, .3);
+      box-shadow: 0 12px 12px 0 rgba(#555d66, 0.3);
     }
 
-    .vhc-order-items-panel-header {
-      height: 50px;
+    .panel-header {
       height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px;
+      padding: 16px 24px;
       background: #e0e0e0;
 
-      @media (min-width: 783px) {
-        padding: 16px 24px;
-      }
-
       h3 {
+        display: flex;
+        align-items: center;
         margin: 0;
         padding: 0;
-        font-size: 20px;
-        font-weight: 400;
+        color: #1e1e1e;
+        font-size: 16px;
+        font-weight: 600;
         line-height: 28px;
       }
     }
 
-    .vhc-order-items-card {
+    .items-card {
       position: relative;
       display: grid;
-      padding: 24px;
-      padding: var(--main-gap);
+      padding: 16px 24px;
       color: #757575;
-      border-bottom: 1px solid #e0e0e0;
-      background: #fff;
+      border-top: 1px solid #f0f0f0;
+      background: $white;
       font-size: 13px;
-      font-size: .8125rem;
       grid-template-columns: 84px 1fr;
-      grid-template-areas: "icon header"
-        "icon body";
+      grid-template-areas: "icon header""icon body";
 
       &.empty-card {
         .placeholder {
@@ -101,11 +98,11 @@ $wc-color: var(--wp-admin-theme-color);
           background-color: #e2e4e7;
         }
 
-        .vhc-order-items-card-title {
+        .card-title {
           width: 80%;
         }
 
-        .vhc-order-items-card-body {
+        .card-body {
           .placeholder {
             width: 60px;
             margin-bottom: 0;
@@ -113,11 +110,11 @@ $wc-color: var(--wp-admin-theme-color);
         }
       }
 
-      .vhc-order-items-card-icon {
+      .card-icon {
         grid-area: icon;
         fill: #e0e0e0;
 
-        .vhc-product-image {
+        .image {
           position: relative;
           width: 60px;
           height: 60px;
@@ -135,40 +132,30 @@ $wc-color: var(--wp-admin-theme-color);
         }
       }
 
-      .vhc-order-items-card-header {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 16px;
+      .card-header {
+        display: grid;
+        margin-bottom: 6px;
+        grid-area: header;
+        grid-template:
+          "title date"
+          "subtitle date"/1fr auto;
 
-        @media (min-width: 783px) {
-          display: -ms-grid;
-          display: grid;
-          grid-area: header;
-          grid-template:
-            'title date'
-            'subtitle date'/1fr auto;
-        }
-
-        .vhc-order-items-card-title {
+        .card-title {
           margin: 0;
           font-size: 15px;
-          font-size: 0.9375rem;
           order: 2;
-
-          @media (min-width: 783px) {
-            grid-area: title;
-          }
+          grid-area: title;
 
           a {
-            color: $wc-color;
+            color: $primary;
           }
         }
       }
 
-      .vhc-order-items-card-body {
+      .card-body {
         grid-area: body;
 
-        .vhc-order-items-card-qty {
+        .card-qty {
           padding: 3px 8px;
           color: #757575;
           border-radius: 3px;
